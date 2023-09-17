@@ -11,9 +11,13 @@ class Process:
 
 
 def sjf(process):
+    # sorting the processes with respect to their arrival times
     process.sort(key=lambda x: x.arrivalTime)
+
     time_passed = 0
     ready_queue = []
+
+    # building the ready queue as a priority queue, where priority = shorter exe time
     heapq.heappush(ready_queue, (process[0].execTime, process[0]))
 
     pcount = 1
