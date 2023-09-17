@@ -20,9 +20,14 @@ def sjf(process):
     # building the ready queue as a priority queue, where priority = shorter exe time
     heapq.heappush(ready_queue, (process[0].execTime, process[0]))
 
+    # keeping track of how many processes are added to the ready queue
     pcount = 1
+
     while len(ready_queue) > 0:
+        # the pop method returns a tuple -> (priority, task) and here the task the process
         p = heapq.heappop(ready_queue)[1]
+
+        # when ready queue is empty and a process it yet to arrive
         if p.arrivalTime > time_passed:
             time_passed = p.arrivalTime
 
@@ -63,5 +68,6 @@ def main():
     print(f"Average: \t    {total_wait / n} \t\t\t {total_tat/ n}")
 
 
+# calling the main function
 if __name__ == "__main__":
     main()
