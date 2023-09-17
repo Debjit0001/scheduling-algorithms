@@ -18,12 +18,11 @@ def fcfs(process):
         time_passed += p.execTime
 
 
-# inputting the arrival times and execution times of the processes:
-n = int(input("Enter number of processes : "))
-processes = []
-
-
 def main():
+    # inputting the arrival times and execution times of the processes:
+    n = int(input("Enter number of processes : "))
+    processes = []
+
     print("Enter arrival & burst time of the processes: ")
     for i in range(n):
         input_str = input(f"P{i + 1}: ")
